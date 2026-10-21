@@ -23,7 +23,7 @@ const creatures = [
         type: "Grass",
         level: "Base",
         stats: { hp: 45, attack: 49, defence: 49 },
-        image: "https://img.pokemondb.net/artwork/avif/bulbasaur.avif",
+        image: "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/001.png",
         description: "Une graine est présente sur son dos dès sa naissance et grandit avec lui."
     },
     {
@@ -32,7 +32,7 @@ const creatures = [
         type: "Grass",
         level: "Stage 1",
         stats: { hp: 60, attack: 62, defence: 63 },
-        image: "https://img.pokemondb.net/artwork/avif/ivysaur.avif",
+        image: "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/002.png",
         description: "Le bulbe sur son dos devient si grand qu'il a du mal à se tenir sur ses pattes arrière."
     },
     {
@@ -41,7 +41,7 @@ const creatures = [
         type: "Grass",
         level: "Stage 2",
         stats: { hp: 80, attack: 82, defence: 83 },
-        image: "https://img.pokemondb.net/artwork/avif/venusaur.avif",
+        image: "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/003.png",
         description: "La plante sur son dos fleurit en absorbant l'énergie du soleil."
     },
     {
@@ -50,7 +50,7 @@ const creatures = [
         type: "Fire",
         level: "Base",
         stats: { hp: 39, attack: 52, defence: 43 },
-        image: "https://img.pokemondb.net/artwork/avif/charmander.avif",
+        image: "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/004.png",
         description: "Il préfère les endroits chauds et sa queue peut dégager de la vapeur sous la pluie."
     },
     {
@@ -59,7 +59,7 @@ const creatures = [
         type: "Fire",
         level: "Stage 1",
         stats: { hp: 58, attack: 64, defence: 58 },
-        image: "https://img.pokemondb.net/artwork/avif/charmeleon.avif",
+        image: "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/005.png",
         description: "Il utilise ses griffes acérées et devient particulièrement agressif au combat."
     },
     {
@@ -68,7 +68,7 @@ const creatures = [
         type: "Fire",
         level: "Stage 2",
         stats: { hp: 78, attack: 84, defence: 78 },
-        image: "https://img.pokemondb.net/artwork/avif/charizard.avif",
+        image: "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/006.png",
         description: "Il vole dans le ciel et crache des flammes capables de faire fondre la roche."
     },
     {
@@ -77,7 +77,7 @@ const creatures = [
         type: "Water",
         level: "Base",
         stats: { hp: 44, attack: 48, defence: 65 },
-        image: "https://img.pokemondb.net/artwork/avif/squirtle.avif",
+        image: "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/007.png",
         description: "Il se protège dans sa carapace avant de projeter de l'eau vers ses adversaires."
     },
     {
@@ -86,7 +86,7 @@ const creatures = [
         type: "Water",
         level: "Stage 1",
         stats: { hp: 59, attack: 63, defence: 80 },
-        image: "https://img.pokemondb.net/artwork/avif/wartortle.avif",
+        image: "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/008.png",
         description: "Sa longue queue touffue est considérée comme un symbole de longévité."
     },
     {
@@ -95,7 +95,7 @@ const creatures = [
         type: "Water",
         level: "Stage 2",
         stats: { hp: 79, attack: 83, defence: 100 },
-        image: "https://img.pokemondb.net/artwork/avif/blastoise.avif",
+        image: "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/009.png",
         description: "Ses canons installés sur sa carapace projettent de puissants jets d'eau."
     },
     {
@@ -104,7 +104,7 @@ const creatures = [
         type: "Bug",
         level: "Base",
         stats: { hp: 45, attack: 30, defence: 35 },
-        image: "https://img.pokemondb.net/artwork/avif/caterpie.avif",
+        image: "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/010.png",
         description: "Ses petites pattes munies de ventouses lui permettent de grimper sur les murs et les pentes."
     },
     {
@@ -113,7 +113,7 @@ const creatures = [
         type: "Bug",
         level: "Stage 1",
         stats: { hp: 50, attack: 20, defence: 55 },
-        image: "https://img.pokemondb.net/artwork/avif/metapod.avif",
+        image: "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/011.png",
         description: "Sa carapace protège son corps fragile pendant sa transformation."
     },
     {
@@ -122,6 +122,6 @@ const creatures = [
         type: "Bug",
         level: "Stage 2",
         stats: { hp: 60, attack: 45, defence: 50 },
-        image: "https://img.pokemondb.net/artwork/avif/butterfree.avif",
+        image: "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/012.png",
         description: "Ses ailes sont recouvertes d'une poudre qui lui permet de voler même sous la pluie."
     }];
