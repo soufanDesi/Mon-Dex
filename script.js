@@ -60,3 +60,25 @@
 // -------------------------------------------------------------
 // BONUS : LocalStorage, Fetch API, tri, comparaison
 // -------------------------------------------------------------
+
+const Numéro = document.querySelector('input[name="id"]');
+const regex = /^#\d{3}$/;
+const message = document.querySelector(".error-message");
+
+Numéro.addEventListener("blur", function () {
+    if (regex.test(Numéro.value)) {
+        console.log("Numéro valide");
+        Numéro.classList.remove("border-red-500");
+        Numéro.classList.add("border-green-500");
+        message.textContent = "";
+    } else {
+        console.log("Numéro invalide");
+        Numéro.classList.remove("border-green-500");
+        Numéro.classList.add("border-red-500");
+        message.textContent = "Le numéro doit être au format #001";
+    }
+}
+);
+
+
+
