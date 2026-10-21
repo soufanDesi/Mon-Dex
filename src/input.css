@@ -3,23 +3,24 @@
 @tailwind utilities;
 
 @layer components {
+
   /* Bouton principal */
   .btn-primary {
-    @apply h-12 px-6 rounded-xl bg-brand text-white font-bold;
+    @apply h-12 px-6 rounded-xl bg-brand text-white font-bold focus-visible:ring-2 focus-visible:ring-ink focus-visible:ring-offset-2;
   }
 
   /* Bouton secondaire (contour) */
   .btn-outline {
-    @apply h-11 px-4 rounded-xl border-2 border-ink bg-white text-ink font-bold outline-none;
+    @apply h-11 px-4 rounded-xl border-2 border-ink bg-white text-ink font-bold outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2;
   }
 
   /* Bouton de filtre par type */
   .chip {
-    @apply h-11 px-5 rounded-full border-2 border-line bg-white text-ink font-bold outline-none;
+    @apply h-11 px-5 rounded-full border-2 border-line bg-white text-ink font-bold outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2;
   }
 
   /* Champ de formulaire */
   .field {
-    @apply h-12 rounded-xl border-2 border-line bg-white px-3 text-base outline-none;
+    @apply h-12 rounded-xl border-2 border-line bg-white px-3 text-base outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2;
   }
 }
