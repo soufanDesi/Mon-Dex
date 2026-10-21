@@ -1,11 +1,18 @@
 <!doctype html>
 <html lang="fr">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Mon Dex</title>
   <link rel="stylesheet" href="./dist/output.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
 </head>
+
 <body class="bg-ground font-body text-ink">
 
   <!-- ===================== EN-TÊTE ===================== -->
@@ -13,11 +20,16 @@
     <div class="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 px-8 py-5">
       <div class="flex items-center gap-3">
         <div class="flex h-11 w-11 items-center justify-center rounded-xl bg-brand">
-          <svg aria-hidden="true" class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18"></path><circle cx="12" cy="12" r="3"></circle></svg>
+          <svg aria-hidden="true" class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"
+            stroke-linecap="round">
+            <circle cx="12" cy="12" r="9"></circle>
+            <path d="M3 12h18"></path>
+            <circle cx="12" cy="12" r="3"></circle>
+          </svg>
         </div>
         <div>
           <p class="font-display text-2xl font-extrabold leading-none">Mon Dex</p>
-          <p class="text-sm text-gray-300">[Votre univers] · <span id="creature-count">6</span> créatures</p>
+          <p class="text-sm text-gray-300">Pokémon · <span id="creature-count">6</span> créatures</p>
         </div>
       </div>
       <nav aria-label="Navigation principale" class="flex flex-wrap gap-2">
@@ -28,7 +40,7 @@
     </div>
   </header>
 
-  <main class="mx-auto flex max-w-7xl flex-col gap-8 px-8 py-8">
+  <main class="mx-auto flex max-w-7xl flex-col gap-8 px-4 py-8 lg:px-8">
 
     <!-- ===================== RECHERCHE ET FILTRES ===================== -->
     <section aria-label="Recherche et filtres" class="flex flex-col gap-4">
@@ -39,26 +51,33 @@
           <input id="search" type="search" placeholder="ex. Mossling" class="field font-normal">
         </label>
       </div>
-      <div id="filters" role="group" aria-label="Filtrer par type" class="flex h-11 flex-nowrap gap-2 overflow-hidden">
-          <button type="button" class="chip bg-ink text-white border-ink shrink-0">Tous</button>
-          <button type="button" class="chip shrink-0">Feu</button>
-          <button type="button" class="chip shrink-0">Eau</button>
-          <button type="button" class="chip shrink-0">Plante</button>
-          <button type="button" class="chip shrink-0">Électrik</button>
-          <button type="button" class="chip shrink-0">Glace</button>
-          <button type="button" class="chip shrink-0">Ténèbres</button>
+      <div id="filters" role="group" aria-label="Filtrer par type" class="flex h-11 flex-nowrap gap-2 overflow-x-auto">
+        <button type="button" class="chip bg-ink text-white border-ink shrink-0">Tous</button>
+        <button type="button" class="chip shrink-0">Feu</button>
+        <button type="button" class="chip shrink-0">Eau</button>
+        <button type="button" class="chip shrink-0">Plante</button>
+        <button type="button" class="chip shrink-0">Électrik</button>
+        <button type="button" class="chip shrink-0">Glace</button>
+        <button type="button" class="chip shrink-0">Ténèbres</button>
       </div>
     </section>
 
-    <div class="flex gap-8 items-start">
+    <div class="flex flex-col gap-4 lg:flex-row">
 
       <!-- ===================== GRILLE DES CRÉATURES ===================== -->
-      <section id="grid" aria-label="Créatures" class="grid min-w-0 flex-1 grid-cols-3 gap-5">
+      <section id="grid" aria-label="Créatures"
+        class="grid grid-cols-1 min-w-0 gap-6 md:grid-cols-2 xl:grid-cols-3 flex-1 lg:self-start">
 
         <!-- Carte écrite à la main : à remplacer par des cartes générées en JS (Partie 2) -->
-        <article class="flex flex-col gap-3 rounded-card bg-white p-3 pb-4">
+        <article class="flex flex-col gap-3 rounded-card bg-white p-3 pb-4 hover:-translate-y-1 transition-transform duration-500">
           <div class="relative flex h-36 items-center justify-center rounded-xl bg-brand-light">
-            <svg aria-hidden="true" class="h-14 w-14 text-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 16c0-5 3.5-9 8-9s8 4 8 9"></path><circle cx="9" cy="12" r="1"></circle><circle cx="15" cy="12" r="1"></circle><path d="M7 7 5 3M17 7l2-4"></path></svg>
+            <svg aria-hidden="true" class="h-14 w-14 text-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 16c0-5 3.5-9 8-9s8 4 8 9"></path>
+              <circle cx="9" cy="12" r="1"></circle>
+              <circle cx="15" cy="12" r="1"></circle>
+              <path d="M7 7 5 3M17 7l2-4"></path>
+            </svg>
             <span class="absolute left-3 top-2 font-mono text-sm text-muted">#001</span>
           </div>
           <div class="flex items-center justify-between gap-2">
@@ -70,9 +89,15 @@
         </article>
 
         <!-- Carte écrite à la main : à remplacer par des cartes générées en JS (Partie 2) -->
-        <article class="flex flex-col gap-3 rounded-card bg-white p-3 pb-4">
+        <article class="flex flex-col gap-3 rounded-card bg-white p-3 pb-4 hover:-translate-y-1 transition-transform duration-500">
           <div class="relative flex h-36 items-center justify-center rounded-xl bg-brand-light">
-            <svg aria-hidden="true" class="h-14 w-14 text-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 16c0-5 3.5-9 8-9s8 4 8 9"></path><circle cx="9" cy="12" r="1"></circle><circle cx="15" cy="12" r="1"></circle><path d="M7 7 5 3M17 7l2-4"></path></svg>
+            <svg aria-hidden="true" class="h-14 w-14 text-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 16c0-5 3.5-9 8-9s8 4 8 9"></path>
+              <circle cx="9" cy="12" r="1"></circle>
+              <circle cx="15" cy="12" r="1"></circle>
+              <path d="M7 7 5 3M17 7l2-4"></path>
+            </svg>
             <span class="absolute left-3 top-2 font-mono text-sm text-muted">#002</span>
           </div>
           <div class="flex items-center justify-between gap-2">
@@ -84,9 +109,15 @@
         </article>
 
         <!-- Carte écrite à la main : à remplacer par des cartes générées en JS (Partie 2) -->
-        <article class="flex flex-col gap-3 rounded-card bg-white p-3 pb-4">
+        <article class="flex flex-col gap-3 rounded-card bg-white p-3 pb-4 hover:-translate-y-1 transition-transform duration-500">
           <div class="relative flex h-36 items-center justify-center rounded-xl bg-brand-light">
-            <svg aria-hidden="true" class="h-14 w-14 text-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 16c0-5 3.5-9 8-9s8 4 8 9"></path><circle cx="9" cy="12" r="1"></circle><circle cx="15" cy="12" r="1"></circle><path d="M7 7 5 3M17 7l2-4"></path></svg>
+            <svg aria-hidden="true" class="h-14 w-14 text-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 16c0-5 3.5-9 8-9s8 4 8 9"></path>
+              <circle cx="9" cy="12" r="1"></circle>
+              <circle cx="15" cy="12" r="1"></circle>
+              <path d="M7 7 5 3M17 7l2-4"></path>
+            </svg>
             <span class="absolute left-3 top-2 font-mono text-sm text-muted">#003</span>
           </div>
           <div class="flex items-center justify-between gap-2">
@@ -98,9 +129,15 @@
         </article>
 
         <!-- Carte écrite à la main : à remplacer par des cartes générées en JS (Partie 2) -->
-        <article class="flex flex-col gap-3 rounded-card bg-white p-3 pb-4">
+        <article class="flex flex-col gap-3 rounded-card bg-white p-3 pb-4 hover:-translate-y-1 transition-transform duration-500">
           <div class="relative flex h-36 items-center justify-center rounded-xl bg-brand-light">
-            <svg aria-hidden="true" class="h-14 w-14 text-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 16c0-5 3.5-9 8-9s8 4 8 9"></path><circle cx="9" cy="12" r="1"></circle><circle cx="15" cy="12" r="1"></circle><path d="M7 7 5 3M17 7l2-4"></path></svg>
+            <svg aria-hidden="true" class="h-14 w-14 text-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 16c0-5 3.5-9 8-9s8 4 8 9"></path>
+              <circle cx="9" cy="12" r="1"></circle>
+              <circle cx="15" cy="12" r="1"></circle>
+              <path d="M7 7 5 3M17 7l2-4"></path>
+            </svg>
             <span class="absolute left-3 top-2 font-mono text-sm text-muted">#004</span>
           </div>
           <div class="flex items-center justify-between gap-2">
@@ -112,9 +149,15 @@
         </article>
 
         <!-- Carte écrite à la main : à remplacer par des cartes générées en JS (Partie 2) -->
-        <article class="flex flex-col gap-3 rounded-card bg-white p-3 pb-4">
+        <article class="flex flex-col gap-3 rounded-card bg-white p-3 pb-4 hover:-translate-y-1 transition-transform duration-500">
           <div class="relative flex h-36 items-center justify-center rounded-xl bg-brand-light">
-            <svg aria-hidden="true" class="h-14 w-14 text-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 16c0-5 3.5-9 8-9s8 4 8 9"></path><circle cx="9" cy="12" r="1"></circle><circle cx="15" cy="12" r="1"></circle><path d="M7 7 5 3M17 7l2-4"></path></svg>
+            <svg aria-hidden="true" class="h-14 w-14 text-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 16c0-5 3.5-9 8-9s8 4 8 9"></path>
+              <circle cx="9" cy="12" r="1"></circle>
+              <circle cx="15" cy="12" r="1"></circle>
+              <path d="M7 7 5 3M17 7l2-4"></path>
+            </svg>
             <span class="absolute left-3 top-2 font-mono text-sm text-muted">#005</span>
           </div>
           <div class="flex items-center justify-between gap-2">
@@ -126,9 +169,15 @@
         </article>
 
         <!-- Carte écrite à la main : à remplacer par des cartes générées en JS (Partie 2) -->
-        <article class="flex flex-col gap-3 rounded-card bg-white p-3 pb-4">
+        <article class="flex flex-col gap-3 rounded-card bg-white p-3 pb-4 hover:-translate-y-1 transition-transform duration-500">
           <div class="relative flex h-36 items-center justify-center rounded-xl bg-brand-light">
-            <svg aria-hidden="true" class="h-14 w-14 text-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 16c0-5 3.5-9 8-9s8 4 8 9"></path><circle cx="9" cy="12" r="1"></circle><circle cx="15" cy="12" r="1"></circle><path d="M7 7 5 3M17 7l2-4"></path></svg>
+            <svg aria-hidden="true" class="h-14 w-14 text-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 16c0-5 3.5-9 8-9s8 4 8 9"></path>
+              <circle cx="9" cy="12" r="1"></circle>
+              <circle cx="15" cy="12" r="1"></circle>
+              <path d="M7 7 5 3M17 7l2-4"></path>
+            </svg>
             <span class="absolute left-3 top-2 font-mono text-sm text-muted">#006</span>
           </div>
           <div class="flex items-center justify-between gap-2">
@@ -141,33 +190,84 @@
 
       </section>
 
-      <aside class="flex w-[420px] shrink-0 flex-col gap-6">
+      <aside class="flex w-full shrink-0 flex-col gap-6 lg:w-[420px]">
 
         <!-- ===================== PANNEAU DE DÉTAIL ===================== -->
-        <section id="detail" aria-label="Détail de la créature" class="flex flex-col gap-4 rounded-card border-2 border-ink bg-white p-6">
+        <section id="detail" aria-label="Détail de la créature"
+          class="flex flex-col gap-4 rounded-card border-2 border-ink bg-white p-6">
           <div class="flex items-center justify-between">
             <span class="font-mono text-sm text-muted">#003 · Détail</span>
             <button type="button" aria-label="Fermer le détail" class="btn-outline w-11 px-0">✕</button>
           </div>
           <div class="flex h-48 items-center justify-center rounded-2xl bg-brand-light">
-            <svg aria-hidden="true" class="h-20 w-20 text-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 16c0-5 3.5-9 8-9s8 4 8 9"></path><circle cx="9" cy="12" r="1"></circle><circle cx="15" cy="12" r="1"></circle><path d="M7 7 5 3M17 7l2-4"></path></svg>
+            <svg aria-hidden="true" class="h-20 w-20 text-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 16c0-5 3.5-9 8-9s8 4 8 9"></path>
+              <circle cx="9" cy="12" r="1"></circle>
+              <circle cx="15" cy="12" r="1"></circle>
+              <path d="M7 7 5 3M17 7l2-4"></path>
+            </svg>
           </div>
           <div class="flex items-center justify-between">
             <h2 class="font-display text-3xl font-extrabold">Mossling</h2>
             <span class="rounded-full bg-brand-light px-3 py-1 text-sm font-bold">Plante</span>
           </div>
-          <p class="text-gray-700">Une créature calme qui dort sous les feuilles mortes et se réveille quand il pleut.</p>
+          <p class="text-gray-700">Une créature calme qui dort sous les feuilles mortes et se réveille quand il pleut.
+          </p>
           <div class="flex flex-col gap-2 text-sm">
-            <div class="grid grid-cols-[80px_1fr_40px] items-center gap-2"><span class="font-bold">PV</span><span class="h-3 rounded-full bg-ground"><span class="block h-3 w-[30%] rounded-full bg-brand"></span></span><span class="text-right font-mono">45</span></div>
-            <div class="grid grid-cols-[80px_1fr_40px] items-center gap-2"><span class="font-bold">Attaque</span><span class="h-3 rounded-full bg-ground"><span class="block h-3 w-[33%] rounded-full bg-brand"></span></span><span class="text-right font-mono">49</span></div>
-            <div class="grid grid-cols-[80px_1fr_40px] items-center gap-2"><span class="font-bold">Défense</span><span class="h-3 rounded-full bg-ground"><span class="block h-3 w-[43%] rounded-full bg-brand"></span></span><span class="text-right font-mono">65</span></div>
+            <div class="grid grid-cols-[80px_1fr_40px] items-center gap-2"><span class="font-bold">PV</span><span
+                class="h-3 rounded-full bg-ground"><span
+                  class="block h-3 w-[30%] rounded-full bg-brand"></span></span><span
+                class="text-right font-mono">45</span></div>
+            <div class="grid grid-cols-[80px_1fr_40px] items-center gap-2"><span class="font-bold">Attaque</span><span
+                class="h-3 rounded-full bg-ground"><span
+                  class="block h-3 w-[33%] rounded-full bg-brand"></span></span><span
+                class="text-right font-mono">49</span></div>
+            <div class="grid grid-cols-[80px_1fr_40px] items-center gap-2"><span class="font-bold">Défense</span><span
+                class="h-3 rounded-full bg-ground"><span
+                  class="block h-3 w-[43%] rounded-full bg-brand"></span></span><span
+                class="text-right font-mono">65</span></div>
           </div>
           <button type="button" class="btn-primary">Ajouter à l'équipe</button>
         </section>
 
         <!-- ===================== MON ÉQUIPE (INCOMPLÈTE) ===================== -->
         <section id="team" aria-label="Mon équipe" class="rounded-card bg-white p-6">
-          <h2 class="font-display text-2xl font-extrabold">Mon équipe</h2>
+          <div class="flex justify-between items-center">
+            <h2 class="font-display text-2xl font-extrabold">Mon équipe</h2>
+            <p>0 / 6</p>
+          </div>
+
+          <div class="grid grid-cols-2 gap-2 mt-4">
+            <div class="border-2 border-dashed rounded-xl p-4">
+              Emplacement 1
+            </div>
+
+            <div class="border-2 border-dashed rounded-xl p-4">
+              Emplacement 1
+            </div>
+
+            <div class="border-2 border-dashed rounded-xl p-4">
+              Emplacement 1
+            </div>
+
+            <div class="border-2 border-dashed rounded-xl p-4">
+              Emplacement 1
+            </div>
+
+            <div class="border-2 border-dashed rounded-xl p-4">
+              Emplacement 1
+            </div>
+
+            <div class="border-2 border-dashed rounded-xl p-4">
+              Emplacement 1
+            </div>
+
+          </div>
+
+          <p class="mt-4 text-sm text-muted">
+            Maximum 6 Pokémon dans votre équipe. Aucun doublon autorisé.
+          </p>
           <!-- TODO (Partie 1) : terminez cette section en suivant la maquette :
                compteur x/6, 6 emplacements (vides ou remplis), message de règles. -->
         </section>
@@ -193,8 +293,12 @@
         <label class="flex flex-col gap-1 text-sm font-bold">Type
           <select name="type" class="field font-normal">
             <option value="">Choisir un type</option>
-            <option>Feu</option><option>Eau</option><option>Plante</option>
-            <option>Électrik</option><option>Glace</option><option>Ténèbres</option>
+            <option>Feu</option>
+            <option>Eau</option>
+            <option>Plante</option>
+            <option>Électrik</option>
+            <option>Glace</option>
+            <option>Ténèbres</option>
           </select>
           <span class="error-message text-sm font-normal text-muted"></span>
         </label>
@@ -219,7 +323,8 @@
           <span class="error-message text-sm font-normal text-muted"></span>
         </label>
         <label class="flex flex-col gap-1 text-sm font-bold md:col-span-2 lg:col-span-4">Description
-          <textarea name="description" rows="3" placeholder="10 à 200 caractères" class="rounded-xl border-2 border-line p-3 font-normal outline-none"></textarea>
+          <textarea name="description" rows="3" placeholder="10 à 200 caractères"
+            class="rounded-xl border-2 border-line p-3 font-normal outline-none"></textarea>
           <span class="error-message text-sm font-normal text-muted"></span>
         </label>
         <div class="flex flex-wrap justify-end gap-3 md:col-span-2 lg:col-span-4">
@@ -239,4 +344,5 @@
   <script src="./data.js"></script>
   <script src="./script.js"></script>
 </body>
+
 </html>
