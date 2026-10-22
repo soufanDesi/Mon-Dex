@@ -80,5 +80,134 @@ Numéro.addEventListener("blur", function () {
 }
 );
 
+const Name = document.querySelector('input[name="name"]');
+const regexName = /^[A-Za-zÀ-ÿ0-9][A-Za-zÀ-ÿ0-9 .'-]{1,29}$/;
+const messageName = Name.nextElementSibling;
+
+Name.addEventListener("blur", function () {
+    if (regexName.test(Name.value)) {
+        console.log("Name valide");
+        Name.classList.remove("border-red-500");
+        Name.classList.add("border-green-500");
+        messageName.textContent = "";
+    } else {
+        console.log("Name invalide");
+        Name.classList.remove("border-green-500");
+        Name.classList.add("border-red-500");
+        messageName.textContent = "Nom invalide";
+    }
+}
+);
 
 
+const type = document.querySelector('select[name="type"]');
+const messageType = type.nextElementSibling;
+
+type.addEventListener("blur", function () {
+    if ((type.value) !== "") {
+        type.classList.remove("border-red-500");
+        type.classList.add("border-green-500");
+        messageType.textContent = "";
+    } else {
+        type.classList.remove("border-green-500")
+        type.classList.add("border-red-500");
+        messageType.textContent = "Veuillez choisir un type";
+    }
+});
+
+
+const niveau = document.querySelector('input[name="level"]');
+const messageLevel = niveau.nextElementSibling;
+
+const regexLevel = /^(Base|Stage 1|Stage 2)$/i;
+
+niveau.addEventListener("blur", function () {
+    if (regexLevel.test(niveau.value)) {
+        niveau.classList.remove("border-red-500");
+        niveau.classList.add("border-green-500");
+        messageLevel.textContent = "";
+    } else {
+        niveau.classList.remove("border-green-500");
+        niveau.classList.add("border-red-500");
+        messageLevel.textContent = "Veuillez saisir Base, Stage 1 ou Stage 2";
+    }
+})
+
+
+const statis1 = document.querySelector('input[name="stat1"]');
+const messageStatis1 = statis1.nextElementSibling;
+const regexStatis = /^\d{1,3}$/;
+statis1.addEventListener("blur", function () {
+    if (regexStatis.test(statis1.value)) {
+        statis1.classList.remove("border-red-500");
+        statis1.classList.add("border-green-500");
+        messageStatis1.textContent = "";
+    } else {
+        statis1.classList.remove("border-green-500");
+        statis1.classList.add("border-red-500");
+        messageStatis1.textContent = "Veuillez saisir un entier entre 0 et 999";
+    }
+})
+
+
+const statis2 = document.querySelector('input[name="stat2"]');
+const messageStatis2 = statis2.nextElementSibling;
+
+statis2.addEventListener("blur", function () {
+    if (regexStatis.test(statis2.value)) {
+        statis2.classList.remove("border-red-500");
+        statis2.classList.add("border-green-500");
+        messageStatis2.textContent = "";
+    } else {
+        statis2.classList.remove("border-green-500");
+        statis2.classList.add("border-red-500");
+        messageStatis2.textContent = "Veuillez saisir un entier entre 0 et 999";
+    }
+})
+
+const statis3 = document.querySelector('input[name="stat3"]');
+const messageStatis3 = statis3.nextElementSibling;
+
+statis3.addEventListener("blur", function () {
+    if (regexStatis.test(statis3.value)) {
+        statis3.classList.remove("border-red-500");
+        statis3.classList.add("border-green-500");
+        messageStatis3.textContent = "";
+    } else {
+        statis3.classList.remove("border-green-500");
+        statis3.classList.add("border-red-500");
+        messageStatis3.textContent = "Veuillez saisir un entier entre 0 et 999";
+    }
+})
+
+const lienImage = document.querySelector('input[name="image"]');
+const messageImage = lienImage.nextElementSibling;
+const regexImage = /^https:\/\/\S+\.(png|jpe?g|webp|gif)$/i;
+lienImage.addEventListener("blur", function () {
+    if (regexImage.test(lienImage.value)) {
+        lienImage.classList.remove("border-red-500");
+        lienImage.classList.add("border-green-500");
+        messageImage.textContent = "";
+    } else {
+        lienImage.classList.remove("border-green-500");
+        lienImage.classList.add("border-red-500");
+        messageImage.textContent = "URL invalide";
+    }
+})
+
+const description = document.querySelector('textarea[name="description"]');
+const messageDesc = description.nextElementSibling;
+const regexDesc = /^[\s\S]{10,200}$/;
+
+description.addEventListener("blur", function () {
+    if (regexDesc.test(description.value)) {
+        description.classList.remove("border-red-500");
+        description.classList.add("border-green-500");
+        messageDesc.textContent = "";
+    } else {
+        description.classList.remove("border-green-500");
+        description.classList.add("border-red-500");
+        messageDesc.textContent = "10 à 200 caractères";
+
+    }
+})

@@ -53,7 +53,7 @@
         <h1 class="font-display text-4xl font-extrabold">Trouver une créature</h1>
         <label class="flex w-full max-w-md flex-col gap-1 text-sm font-bold">
           Rechercher par nom
-          <input id="search" type="search" placeholder="ex. Mossling" class="field font-normal">
+          <input id="search" type="search" placeholder="ex. Bulbasaur" class="field font-normal">
         </label>
       </div>
       <div id="filters" role="group" aria-label="Filtrer par type" class="flex h-11 flex-nowrap gap-2 overflow-x-auto">
@@ -98,7 +98,7 @@
             <span class="absolute left-3 top-2 font-mono text-sm text-muted">#002</span>
           </div>
           <div class="flex items-center justify-between gap-2">
-            <h3 class="font-display text-xl font-semibold">Ivysaur</h3>
+            <h2 class="font-display text-xl font-semibold">Ivysaur</h2>
             <span class="rounded-full bg-brand-light px-3 py-1 text-sm font-bold text-ink">Plante</span>
           </div>
           <p class="text-sm text-muted">Stage 1 · Total 185</p>
@@ -114,7 +114,7 @@
             <span class="absolute left-3 top-2 font-mono text-sm text-muted">#003</span>
           </div>
           <div class="flex items-center justify-between gap-2">
-            <h3 class="font-display text-xl font-semibold">Venusaur</h3>
+            <h2 class="font-display text-xl font-semibold">Venusaur</h2>
             <span class="rounded-full bg-brand-light px-3 py-1 text-sm font-bold text-ink">Plante</span>
           </div>
           <p class="text-sm text-muted">Stage 2 · Total 245</p>
@@ -130,7 +130,7 @@
             <span class="absolute left-3 top-2 font-mono text-sm text-muted">#004</span>
           </div>
           <div class="flex items-center justify-between gap-2">
-            <h3 class="font-display text-xl font-semibold">Charmander</h3>
+            <h2 class="font-display text-xl font-semibold">Charmander</h2>
             <span class="rounded-full bg-brand-light px-3 py-1 text-sm font-bold text-ink">Feu</span>
           </div>
           <p class="text-sm text-muted">Base · Total 134</p>
@@ -146,7 +146,7 @@
             <span class="absolute left-3 top-2 font-mono text-sm text-muted">#005</span>
           </div>
           <div class="flex items-center justify-between gap-2">
-            <h3 class="font-display text-xl font-semibold">Charmeleon</h3>
+            <h2 class="font-display text-xl font-semibold">Charmeleon</h2>
             <span class="rounded-full bg-brand-light px-3 py-1 text-sm font-bold text-ink">Feu</span>
           </div>
           <p class="text-sm text-muted">Stage 1 · Total 180</p>
@@ -162,7 +162,7 @@
             <span class="absolute left-3 top-2 font-mono text-sm text-muted">#006</span>
           </div>
           <div class="flex items-center justify-between gap-2">
-            <h3 class="font-display text-xl font-semibold">Charizard</h3>
+            <h2 class="font-display text-xl font-semibold">Charizard</h2>
             <span class="rounded-full bg-brand-light px-3 py-1 text-sm font-bold text-ink">Feu</span>
           </div>
           <p class="text-sm text-muted">Stage 2 · Total 240</p>
@@ -264,7 +264,7 @@
         </label>
         <label class="flex flex-col gap-1 text-sm font-bold">Nom
           <input name="name" type="text" placeholder="Nom de la créature" class="field font-normal">
-          <span class="error-message text-sm font-normal text-muted"></span>
+          <span class="error-message text-sm font-normal text-red-500"></span>
         </label>
         <label class="flex flex-col gap-1 text-sm font-bold">Type
           <select name="type" class="field font-normal">
@@ -276,32 +276,32 @@
             <option>Glace</option>
             <option>Ténèbres</option>
           </select>
-          <span class="error-message text-sm font-normal text-muted"></span>
+          <span class="error-message text-sm font-normal text-red-500"></span>
         </label>
         <label class="flex flex-col gap-1 text-sm font-bold">Niveau
           <input name="level" type="text" placeholder="Base, Niveau 1…" class="field font-normal">
-          <span class="error-message text-sm font-normal text-muted"></span>
+          <span class="error-message text-sm font-normal text-red-500"></span>
         </label>
         <label class="flex flex-col gap-1 text-sm font-bold">Statistique 1
           <input name="stat1" type="text" placeholder="0 à 999" class="field font-normal">
-          <span class="error-message text-sm font-normal text-muted"></span>
+          <span class="error-message text-sm font-normal text-red-500"></span>
         </label>
         <label class="flex flex-col gap-1 text-sm font-bold">Statistique 2
           <input name="stat2" type="text" placeholder="0 à 999" class="field font-normal">
-          <span class="error-message text-sm font-normal text-muted"></span>
+          <span class="error-message text-sm font-normal text-red-500"></span>
         </label>
         <label class="flex flex-col gap-1 text-sm font-bold">Statistique 3
           <input name="stat3" type="text" placeholder="0 à 999" class="field font-normal">
-          <span class="error-message text-sm font-normal text-muted"></span>
+          <span class="error-message text-sm font-normal text-red-500"></span>
         </label>
         <label class="flex flex-col gap-1 text-sm font-bold">Lien de l'image
           <input name="image" type="text" placeholder="https://…/image.png" class="field font-normal">
-          <span class="error-message text-sm font-normal text-muted"></span>
+          <span class="error-message text-sm font-normal text-red-500"></span>
         </label>
         <label class="flex flex-col gap-1 text-sm font-bold md:col-span-2 lg:col-span-4">Description
           <textarea name="description" rows="3" placeholder="10 à 200 caractères"
-            class="rounded-xl border-2 border-line p-3 font-normal outline-none focus-visible:ring-2 focus-visible:ring-gray-300 focus-visible:ring-offset-2"></textarea>
-          <span class="error-message text-sm font-normal text-muted"></span>
+            class="rounded-xl border-2 p-3 font-normal outline-none focus-visible:ring-2 focus-visible:ring-gray-300 focus-visible:ring-offset-2"></textarea>
+          <span class="error-message text-sm font-normal text-red-500"></span>
         </label>
         <div class="flex flex-wrap justify-end gap-3 md:col-span-2 lg:col-span-4">
           <button type="reset" class="btn-outline px-6">Effacer</button>
@@ -313,7 +313,7 @@
   </main>
 
   <footer class="mx-auto max-w-7xl px-8 pb-10 text-sm text-muted">
-    Images : [source des images de votre univers]. Projet de fans réalisé dans le cadre d'une formation.
+    Images : Pokémon.com (site officiel Pokémon). Projet de fans réalisé dans le cadre d'une formation.
   </footer>
 
   <!-- data.js (à créer) doit être chargé AVANT script.js -->
