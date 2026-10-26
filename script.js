@@ -265,17 +265,26 @@ form.addEventListener("submit", function (event) {
         messageName.textContent = "Nom invalide";
     }
 
-    if (regexNumero.test(Numéro.value)) {
-        console.log("Numero valide");
-        Numéro.classList.remove("border-red-500");
-        Numéro.classList.add("border-green-500");
-        message.textContent = "";
-    } else {
-        console.log("Numero invalide");
+    const idExiste = creatures.some(function (pokemon) {
+        return pokemon.id === Numéro.value;
+    });
+
+    if (!regexNumero.test(Numéro.value)) {
         formValide = false;
         Numéro.classList.remove("border-green-500");
         Numéro.classList.add("border-red-500");
         message.textContent = "Le numéro doit être au format #001";
+
+    } else if (idExiste) {
+        formValide = false;
+        Numéro.classList.remove("border-green-500");
+        Numéro.classList.add("border-red-500");
+        message.textContent = "Cet ID existe déjà !";
+
+    } else {
+        Numéro.classList.remove("border-red-500");
+        Numéro.classList.add("border-green-500");
+        message.textContent = "";
     }
 
     if (type.value !== "") {
