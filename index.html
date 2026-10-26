@@ -86,27 +86,27 @@
             <button type="button" aria-label="Fermer le détail" class="btn-outline w-11 px-0">✕</button>
           </div>
           <div class="flex h-48 items-center justify-center rounded-2xl bg-brand-light">
-            <img src="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/003.png" alt="Venusaur"
+            <img id="detail-image" src="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/003.png" alt="Venusaur"
               class="h-40 w-40 object-cover">
           </div>
           <div class="flex items-center justify-between">
-            <h2 class="font-display text-3xl font-extrabold">Venusaur</h2>
-            <span class="rounded-full bg-brand-light px-3 py-1 text-sm font-bold">Plante</span>
+            <h2 id="detail-name" class="font-display text-3xl font-extrabold">Venusaur</h2>
+            <span id="detail-type" class="rounded-full bg-brand-light px-3 py-1 text-sm font-bold">Plante</span>
           </div>
-          <p class="text-gray-700">La plante sur son dos fleurit en absorbant l'énergie du soleil.
+          <p id="detail-description" class="text-gray-700">La plante sur son dos fleurit en absorbant l'énergie du soleil.
           </p>
           <div class="flex flex-col gap-2 text-sm">
             <div class="grid grid-cols-[80px_1fr_40px] items-center gap-2"><span class="font-bold">PV</span><span
-                class="h-3 rounded-full bg-ground"><span
-                  class="block h-3 w-[80%] rounded-full bg-brand"></span></span><span
+                class="h-3 rounded-full bg-ground"><span id="detail-hp-bar"
+                  class="block h-3 w-[80%] rounded-full bg-brand"></span></span><span id="detail-hp"
                 class="text-right font-mono">80</span></div>
             <div class="grid grid-cols-[80px_1fr_40px] items-center gap-2"><span class="font-bold">Attaque</span><span
-                class="h-3 rounded-full bg-ground"><span
-                  class="block h-3 w-[82%] rounded-full bg-brand"></span></span><span
+                class="h-3 rounded-full bg-ground"><span id="detail-attack-bar"
+                  class="block h-3 w-[82%] rounded-full bg-brand"></span></span><span id="detail-attack"
                 class="text-right font-mono">82</span></div>
             <div class="grid grid-cols-[80px_1fr_40px] items-center gap-2"><span class="font-bold">Défense</span><span
-                class="h-3 rounded-full bg-ground"><span
-                  class="block h-3 w-[83%] rounded-full bg-brand"></span></span><span
+                class="h-3 rounded-full bg-ground"><span id="detail-defence-bar"
+                  class="block h-3 w-[83%] rounded-full bg-brand"></span></span><span id="detail-defence"
                 class="text-right font-mono">83</span></div>
           </div>
           <button type="button" class="btn-primary outline-none">Ajouter à l'équipe</button>
