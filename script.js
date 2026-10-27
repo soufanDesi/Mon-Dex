@@ -73,6 +73,10 @@ grid.addEventListener("click", function (event) {
     const pokemon = creatures.find(function (item) {
         return item.id === card.dataset.id;
     });
+    // id
+    const detailNumber = document.querySelector("#detail-number");
+    detailNumber.textContent = `${pokemon.id} · Détail`;
+
     // name
     const detailName = document.querySelector("#detail-name");
     detailName.textContent = pokemon.name;
