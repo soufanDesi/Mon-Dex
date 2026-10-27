@@ -191,7 +191,34 @@ filters.addEventListener("click", function (event) {
 // -------------------------------------------------------------
 const equipe = [];
 const teamGrid = document.querySelector("#team-grid");
+const detailAdd = document.querySelector("#detail-add");
 
+detailAdd.addEventListener("click", function () {
+    const id = document.querySelector("#detail-number").textContent.split(" · ")[0];
+
+    const pokemon = creatures.find(function (item) {
+        return item.id === id;
+    });
+
+    if (!pokemon) return;
+
+    if (equipe.length >= 6) {
+        alert("Votre équipe est complète !");
+        return;
+    }
+
+    const existe = equipe.some(function (item) {
+        return item.id === pokemon.id;
+    });
+
+    if (existe) {
+        alert("Ce Pokémon est déjà dans votre équipe !");
+        return;
+    }
+
+    equipe.push(pokemon);
+    afficherEquipe();
+});
 function afficherEquipe() {
     teamGrid.innerHTML = "";
 
