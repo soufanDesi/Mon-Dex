@@ -3,7 +3,7 @@
 // =============================================================
 // Les données viennent de data.js (la constante `creatures`).
 // Écrivez votre code ici, fonctionnalité par fonctionnalité.
-// Une carte GitHub Projects et au moins un commit par fonctionnalité.
+// Une carte Gitwb Projects et au moins un commit par fonctionnalité.
 
 
 // -------------------------------------------------------------
@@ -14,9 +14,11 @@
 
 const grid = document.querySelector("#grid");
 
-function afficherPokemon() {
+function afficherPokemon(liste = creatures) {
     grid.innerHTML = "";
-    creatures.forEach(function (pokemon) {
+    const creatureCount = document.querySelector("#creature-count");
+    creatureCount.textContent = creatures.length;
+    liste.forEach(function (pokemon) {
         const card = document.createElement("article");
         card.dataset.id = pokemon.id;
         card.className = "flex flex-col gap-3 rounded-xl bg-white p-3 pb-4 hover:-translate-y-1 transition-transform duration-500";
@@ -53,10 +55,21 @@ afficherPokemon();
 // image, description, et statistiques affichées en barres.
 // -------------------------------------------------------------
 
+// x hidden panu
+const detail = document.querySelector("#detail");
+const closeDetail = document.querySelector("#close-detail");
+
+closeDetail.addEventListener("click", function () {
+    detail.classList.add("hidden");
+});
+
+
+
 grid.addEventListener("click", function (event) {
     const card = event.target.closest("article");
 
     if (!card) return;
+    detail.classList.remove("hidden");
     const pokemon = creatures.find(function (item) {
         return item.id === card.dataset.id;
     });
@@ -91,6 +104,29 @@ grid.addEventListener("click", function (event) {
     detaildefence.textContent = pokemon.stats.defence;
     const defenceBar = document.querySelector("#detail-defence-bar");
     defenceBar.style.width = pokemon.stats.defence + "%";
+
+
+
+    // push card Ajouter
+    if (event.target.tagName === "BUTTON") {
+        if (equipe.length >= 6) {
+            alert("Votre équipe est complète !");
+            return;
+        } else {
+            const existe = equipe.some(function (item) {
+                return item.id === pokemon.id;
+            });
+
+            if (existe) {
+                alert("Ce Pokémon est déjà dans votre équipe !");
+                return;
+            } else {
+                equipe.push(pokemon);
+                afficherEquipe();
+            }
+        }
+    }
+
 });
 
 
@@ -99,6 +135,21 @@ grid.addEventListener("click", function (event) {
 // La liste se met à jour pendant la saisie d'un nom
 // (sans tenir compte des majuscules).
 // -------------------------------------------------------------
+const searchInput = document.querySelector("#search");
+let typeActif = "All";
+
+function rechercher() {
+    const texte = searchInput.value.toLowerCase();
+    const resultat = creatures.filter(function (pokemon) {
+        return pokemon.name.toLowerCase().includes(texte) && (typeActif === "All" || pokemon.type === typeActif);
+    });
+    afficherPokemon(resultat);
+}
+
+searchInput.addEventListener("input", rechercher);
+
+
+
 
 
 // -------------------------------------------------------------
@@ -107,8 +158,20 @@ grid.addEventListener("click", function (event) {
 // « Tous » réinitialise le filtre.
 // La recherche et le filtre fonctionnent ENSEMBLE.
 // -------------------------------------------------------------
+const filters = document.querySelector("#filters");
 
+filters.addEventListener("click", function (event) {
+    if (event.target.tagName !== "BUTTON") return;
+    typeActif = event.target.textContent.trim();
 
+    const buttons = filters.querySelectorAll("button");
+
+    buttons.forEach(function (button) {
+        button.classList.remove("bg-ink", "text-white", "border-ink");
+    });
+    event.target.classList.add("bg-ink", "text-white", "border-ink");
+    rechercher();
+});
 // -------------------------------------------------------------
 // 5. CRÉER UNE CRÉATURE
 // Validez chaque champ du formulaire avec une expression régulière
@@ -122,8 +185,56 @@ grid.addEventListener("click", function (event) {
 // Boutons « Ajouter à l'équipe » et « Retirer », gérés avec UN SEUL
 // écouteur sur la grille et UN SEUL sur l'équipe (délégation).
 // -------------------------------------------------------------
+const equipe = [];
+const teamGrid = document.querySelector("#team-grid");
 
+function afficherEquipe() {
+    teamGrid.innerHTML = "";
 
+    const teamCount = document.querySelector("#team-count");
+    teamCount.textContent = equipe.length;
+
+    const sectionCount = document.querySelector("#team-section-count");
+    sectionCount.textContent = equipe.length;
+
+    equipe.forEach(function (pokemon) {
+
+        const card = document.createElement("article");
+        card.dataset.id = pokemon.id;
+        card.className = "flex flex-col gap-3 rounded-xl bg-white p-3 pb-4 transition-transform duration-300 hover:-translate-y-1";
+
+        card.innerHTML = `
+            <div class="relative flex h-36 items-center justify-center rounded-xl bg-brand-light">
+                <img src="${pokemon.image}" alt="${pokemon.name}" class="h-32 w-32">
+                <span class="absolute left-3 top-2 font-mono text-sm text-muted">${pokemon.id}</span>
+            </div>
+
+            <div class="flex items-center justify-between gap-2">
+                <h2 class="min-w-0 font-display text-lg font-semibold">${pokemon.name}</h2>
+                <span class="rounded-full bg-brand-light px-3 py-1 text-sm font-bold text-ink">${pokemon.type}</span>
+            </div>
+
+            <button type="button" class="btn-outline">Retirer</button> `;
+
+        teamGrid.appendChild(card);
+    })
+}
+
+teamGrid.addEventListener("click", function (event) {
+    if (event.target.tagName === "BUTTON") {
+        const card = event.target.closest("article");
+        const id = card.dataset.id;
+
+        const index = equipe.findIndex(function (pokemon) {
+            return pokemon.id === id;
+        });
+
+        if (index !== -1) {
+            equipe.splice(index, 1);
+            afficherEquipe();
+        }
+    }
+});
 // -------------------------------------------------------------
 // 7. RÈGLES DE L'ÉQUIPE
 // 6 créatures au maximum, pas de doublon, un message clair quand
@@ -441,3 +552,23 @@ form.addEventListener("submit", function (event) {
     afficherPokemon();
 })
 
+
+
+
+
+
+
+// stork remove
+form.addEventListener("reset", function () {
+    const inputs = form.querySelectorAll("input, select, textarea");
+
+    inputs.forEach(function (input) {
+        input.classList.remove("border-red-500", "border-green-500");
+    });
+
+    const messages = form.querySelectorAll(".error-message");
+
+    messages.forEach(function (message) {
+        message.textContent = "";
+    });
+});

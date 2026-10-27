@@ -57,13 +57,11 @@
         </label>
       </div>
       <div id="filters" role="group" aria-label="Filtrer par type" class="flex h-11 flex-nowrap gap-2 overflow-x-auto">
-        <button type="button" class="chip bg-ink text-white border-ink shrink-0">Tous</button>
-        <button type="button" class="chip shrink-0">Feu</button>
-        <button type="button" class="chip shrink-0">Eau</button>
-        <button type="button" class="chip shrink-0">Plante</button>
-        <button type="button" class="chip shrink-0">Électrik</button>
-        <button type="button" class="chip shrink-0">Glace</button>
-        <button type="button" class="chip shrink-0">Ténèbres</button>
+        <button type="button" class="chip bg-ink text-white border-ink">All</button>
+        <button type="button" class="chip">Grass</button>
+        <button type="button" class="chip">Fire</button>
+        <button type="button" class="chip">Water</button>
+        <button type="button" class="chip">Bug</button>
       </div>
     </section>
 
@@ -83,17 +81,19 @@
           class="flex flex-col gap-4 rounded-xl border-2 border-ink bg-white p-6">
           <div class="flex items-center justify-between">
             <span class="font-mono text-sm text-muted">#003 · Détail</span>
-            <button type="button" aria-label="Fermer le détail" class="btn-outline w-11 px-0">✕</button>
+            <button id="close-detail" type="button" aria-label="Fermer le détail" class="btn-outline w-11 px-0">✕</button>
           </div>
           <div class="flex h-48 items-center justify-center rounded-2xl bg-brand-light">
-            <img id="detail-image" src="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/003.png" alt="Venusaur"
+            <img id="detail-image"
+              src="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/003.png" alt="Venusaur"
               class="h-40 w-40 object-cover">
           </div>
           <div class="flex items-center justify-between">
             <h2 id="detail-name" class="font-display text-3xl font-extrabold">Venusaur</h2>
             <span id="detail-type" class="rounded-full bg-brand-light px-3 py-1 text-sm font-bold">Plante</span>
           </div>
-          <p id="detail-description" class="text-gray-700">La plante sur son dos fleurit en absorbant l'énergie du soleil.
+          <p id="detail-description" class="text-gray-700">La plante sur son dos fleurit en absorbant l'énergie du
+            soleil.
           </p>
           <div class="flex flex-col gap-2 text-sm">
             <div class="grid grid-cols-[80px_1fr_40px] items-center gap-2"><span class="font-bold">PV</span><span
@@ -116,34 +116,10 @@
         <section id="team" aria-label="Mon équipe" class="rounded-xl bg-white p-6">
           <div class="flex justify-between items-center">
             <h2 class="font-display text-2xl font-extrabold">Mon équipe</h2>
-            <p>0 / 6</p>
+            <p><span id="team-section-count">0</span> / 6</p>
           </div>
 
-          <div class="grid grid-cols-2 gap-2 mt-4">
-            <div class="border-2 border-dashed rounded-xl p-4">
-              Emplacement 1
-            </div>
-
-            <div class="border-2 border-dashed rounded-xl p-4">
-              Emplacement 2
-            </div>
-
-            <div class="border-2 border-dashed rounded-xl p-4">
-              Emplacement 3
-            </div>
-
-            <div class="border-2 border-dashed rounded-xl p-4">
-              Emplacement 4
-            </div>
-
-            <div class="border-2 border-dashed rounded-xl p-4">
-              Emplacement 5
-            </div>
-
-            <div class="border-2 border-dashed rounded-xl p-4">
-              Emplacement 6
-            </div>
-
+          <div id="team-grid" class="grid grid-cols-2 gap-2 mt-4">
           </div>
 
           <p class="mt-4 text-sm text-muted">
@@ -174,12 +150,10 @@
         <label class="flex flex-col gap-1 text-sm font-bold">Type
           <select name="type" class="field font-normal">
             <option value="">Choisir un type</option>
-            <option>Feu</option>
-            <option>Eau</option>
-            <option>Plante</option>
-            <option>Électrik</option>
-            <option>Glace</option>
-            <option>Ténèbres</option>
+            <option>Grass</option>
+            <option>Fire</option>
+            <option>Water</option>
+            <option>Bug</option>
           </select>
           <span class="error-message text-sm font-normal text-red-500"></span>
         </label>
